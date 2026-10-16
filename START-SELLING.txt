@@ -1,0 +1,38 @@
+LEMON SQUEEZY — 10 DAQIQADA GLOBAL TO'LOV (0 so'm)
+
+1. lemonsqueezy.com -> Sign up (email + nom)
+2. Dashboard -> Products -> + New Product
+   - Name: ProofWall Pro, Price: $9/mo Subscription
+   - 2chi product: ProofWall Lifetime, $99 one-time
+3. Checkout -> Copy buy-link (https://...lemonsqueezy.com/...)
+4. index.html ni och, 2 joyni almashtir:
+   YOUR-LEMON-LINK o'rniga o'z linkingni qo'y (2 ta joy: buy-pro, buy-life)
+5. GitHub ga push -> Vercel avtomatik yangilaydi. Bo'ldi, dunyo kartasi ishlaydi.
+   Soliqni Lemon o'zi ushlaydi, senga toza pul keladi. Payout: Settings -> Payouts -> karta ulash.
+
+MIJOZ TOPISH — BUGUN BOSHLASH (tekin)
+
+KUNIGA 10 TA XAT (nusxa-ko'chirish matni, inglizcha — global uchun):
+
+Upwork/Email/DM uchun:
+---
+Hey [Name], saw your portfolio — great work!
+I built ProofWall — collect client reviews with a link, embed a pretty wall in 30 sec.
+Free for first 20 users, can I make yours in 2 min?
+Live demo: https://proofwall-zhca.vercel.app
+---
+
+Reddit (r/freelance, r/SideProject) post sarlavhasi:
+"I built a $9/mo testimonial widget for freelancers (free for feedback)"
+
+X/Twitter:
+"Day 1 building ProofWall in public: collect love, embed anywhere. Live: https://proofwall-zhca.vercel.app — looking for 3 freelancers for free setup, reply 'me'"
+
+QAYERGA JOYLASH (har kuni 1 ta):
+1. Product Hunt (faqat Seshanba 00:01) — launch
+2. Indie Hackers -> Share your project
+3. Reddit 3 ta subreddit
+4. 10 ta Upwork freelanceriga DM
+
+MAQSAD: 10 mijoz x $9 = $90/mo. Shunda Flippa da ~$2500 ga sotish mumkin.
+Doska: har "ha" ni dashboard.html da yangi wall deb yozib bor.
