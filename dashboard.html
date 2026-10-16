@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ProofWall Dashboard</title>
+<style>
+*{box-sizing:border-box;font-family:Inter,system-ui,sans-serif}body{margin:0;background:#f6f6f9;color:#111}
+.wrap{max-width:1000px;margin:auto;padding:20px;display:grid;grid-template-columns:360px 1fr;gap:20px}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}}
+.panel{background:#fff;border:1px solid #e8e8ef;border-radius:16px;padding:20px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0}
+button{background:#7c5cff;color:#fff;border:0;padding:11px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+button.ghost{background:#eee;color:#111}
+#preview{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+textarea.code{font-family:monospace;font-size:12px;height:140px}
+.top{display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:auto;padding:20px}
+.item{border-bottom:1px solid #eee;padding:8px 0;font-size:14px}
+</style>
+</head>
+<body>
+<div class="top"><a href="index.html">← ProofWall</a><b>Dashboard (Free MVP — data saved in browser)</b><span id="count"></span></div>
+<div class="wrap">
+<div class="panel">
+<h3>Add testimonial</h3>
+<input id="name" placeholder="Name — e.g. Sarah K.">
+<input id="role" placeholder="Role — e.g. Founder, USA">
+<textarea id="text" placeholder="They said..."></textarea>
+<select id="stars"><option value="5">★★★★★</option><option value="4">★★★★</option><option value="3">★★★</option></select>
+<input id="theme" type="color" value="#7c5cff"> <small>brand color</small><br><br>
+<button onclick="add()">+ Add</button>
+<button class="ghost" onclick="seed()">Load demo</button>
+<h4 style="margin-top:20px">Your testimonials</h4>
+<div id="list"></div>
+</div>
+<div class="panel">
+<h3>Live preview — exactly what buyers see</h3>
+<div id="preview"></div>
+<h3>1. Share collect link (send to clients)</h3>
+<input id="wallid" placeholder="your name, e.g. jasur" oninput="updateCollect()">
+<textarea class="code" id="collect" readonly style="height:60px"></textarea><br>
+<button onclick="copyCollect()">Copy collect link</button> <a href="#" id="opencollect" target="_blank"><small>open →</small></a>
+<h3 style="margin-top:20px">2. Copy embed (paste on any site)</h3>
+<textarea class="code" id="embed" readonly></textarea><br>
+<button onclick="copyEmbed()">Copy embed code</button>
+<h3>2. Sell it globally</h3>
+<p style="font-size:14px;color:#555">Connect <b>Lemon Squeezy</b> or <b>Gumroad</b> buy-link to Pro button in index.html. You get: worldwide cards + tax handling + transferable product. To flip startup later: sell this folder + domain + MRR screenshot on Flippa / Acquire.com (asking 24-36x MRR).</p>
+<button class="ghost" onclick="exportJSON()">Export data JSON</button>
+</div>
+</div>
+<script src="widget.js"></script>
+<script>
+let data=JSON.parse(localStorage.getItem('pw')||'[]');
+function save(){localStorage.setItem('pw',JSON.stringify(data));render();}
+function add(){
+const n=document.getElementById('name').value.trim(),t=document.getElementById('text').value.trim();
+if(!n||!t){alert('Name + text required');return;}
+data.push({name:n,role:document.getElementById('role').value, text:t, stars:parseInt(document.getElementById('stars').value)});
+document.getElementById('name').value='';document.getElementById('text').value='';
+save();
+}
+function del(i){data.splice(i,1);save();}
+function seed(){
+data=[{name:"Sarah K.",role:"Founder, USA",text:"Put ProofWall in 2 minutes. Signups +27%.",stars:5},{name:"Jasur T.",role:"Freelancer",text:"Clients trust me now.",stars:5}];save();
+}
+function render(){
+const theme=document.getElementById('theme').value||'#7c5cff';
+document.getElementById('count').innerText=data.length+'/∞';
+document.getElementById('list').innerHTML=data.map((x,i)=>'<div class=item><b>'+i+'. '+x.name+'</b> — '+x.text.slice(0,40)+'... <a href=# onclick="del('+i+')">delete</a></div>').join('')||'<small>No data yet</small>';
+ProofWallRender(document.getElementById('preview'),data,{theme});
+const json=JSON.stringify(data).replace(/'/g,"&#39;");
+const code='<div id="proofwall" data-theme="'+theme+'" data-testimonials=\''+JSON.stringify(data)+'\'></div>\n<script src="https://YOUR-DOMAIN.com/widget.js"><\/script>';
+document.getElementById('embed').value=code;
+}
+function copyEmbed(){document.getElementById('embed').select();document.execCommand('copy');alert('Copied! Paste on any site.');}
+function updateCollect(){const id=document.getElementById('wallid').value.trim()||'demo';const link=location.href.replace('dashboard.html','')+'collect.html?id='+encodeURIComponent(id);document.getElementById('collect').value=link;document.getElementById('opencollect').href=link;}
+function copyCollect(){document.getElementById('collect').select();document.execCommand('copy');alert('Collect link copied! Send to client.');}
+updateCollect();
+function exportJSON(){const b=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='proofwall-data.json';a.click();}
+document.getElementById('theme').addEventListener('input',render);
+render();
+</script>
+</body>
+</html>

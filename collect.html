@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leave a testimonial — ProofWall</title>
+<style>
+*{box-sizing:border-box;font-family:Inter,system-ui,sans-serif}body{margin:0;background:#0a0a0f;color:#fff;display:flex;justify-content:center;padding:30px}
+.box{max-width:480px;width:100%;background:#15151d;border:1px solid #262633;border-radius:18px;padding:28px}
+input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid #333;background:#0f0f15;color:#fff;margin:7px 0}
+button{background:#7c5cff;color:#fff;border:0;padding:13px;width:100%;border-radius:10px;font-weight:700;cursor:pointer;font-size:16px}
+.stars{display:flex;gap:6px;font-size:28px;cursor:pointer;margin:8px 0}
+.stars span{color:#444}.stars span.on{color:#ffcf3d}
+small{color:#888}
+</style>
+</head>
+<body>
+<div class="box">
+<div id="head"><h2 style="margin:0">💜 Leave a review</h2><p id="for" style="color:#aaa">for ProofWall user</p></div>
+<div id="form">
+<label>Your name *</label><input id="name" placeholder="e.g. Alex, Founder @ Startup">
+<label>Your role</label><input id="role" placeholder="e.g. Client from Upwork">
+<label>Rating</label><div class="stars" id="stars"><span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5" class="on">★</span></div>
+<label>Your testimonial *</label><textarea id="text" rows="4" placeholder="What was great working with me?"></textarea>
+<button onclick="submit()">Send testimonial →</button>
+<small>MVP v1: this demo saves to YOUR browser + generates a code to send back to owner. V2 with Supabase (free) saves automatically worldwide.</small>
+</div>
+<div id="done" style="display:none;text-align:center">
+<h2>Rahmat! 🎉</h2><p>Testimonial tayyor. Endi shu kodni wall egasiga yuboring:</p>
+<textarea id="out" rows="6" readonly style="width:100%"></textarea><br><br>
+<button onclick="copyOut()">Copy code</button>
+</div>
+</div>
+<script>
+let rating=5;
+document.querySelectorAll('#stars span').forEach(s=>{
+s.onclick=()=>{rating=parseInt(s.dataset.v);document.querySelectorAll('#stars span').forEach(x=>x.classList.toggle('on',parseInt(x.dataset.v)<=rating));};
+});
+const params=new URLSearchParams(location.search);
+const wallId=params.get('id')||'demo';
+document.getElementById('for').innerText='for @'+wallId+' — powered by ProofWall';
+function submit(){
+const n=document.getElementById('name').value.trim(),t=document.getElementById('text').value.trim();
+if(!n||!t){alert('Name + testimonial required');return;}
+const obj={wall:wallId,name:n,role:document.getElementById('role').value,text:t,stars:rating,date:new Date().toISOString()};
+// v1: save locally so owner on same device sees it
+const key='pw_collect_'+wallId;
+const arr=JSON.parse(localStorage.getItem(key)||'[]');arr.push(obj);localStorage.setItem(key,JSON.stringify(arr));
+// also merge to owner's main list if same browser
+const main=JSON.parse(localStorage.getItem('pw')||'[]');main.push(obj);localStorage.setItem('pw',JSON.stringify(main));
+document.getElementById('form').style.display='none';
+document.getElementById('done').style.display='block';
+document.getElementById('out').value=JSON.stringify(obj);
+}
+function copyOut(){document.getElementById('out').select();document.execCommand('copy');alert('Copied! Send to wall owner.');}
+</script>
+</body>
+</html>

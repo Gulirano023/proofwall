@@ -1,0 +1,41 @@
+ProofWall — HOW TO SELL (global, 0 sum start)
+
+1. WHAT YOU SELL TO CUSTOMERS:
+   - Free: 3 testimonials, with branding
+   - Pro $9/mo: unlimited + no branding + custom color
+   - Lifetime $99: pay once
+   Payment: create free account on lemonsqueezy.com -> Create Product
+   -> paste buy-link into index.html Buy Pro button.
+   Lemon Squeezy accepts world cards and handles taxes.
+   You don't need LLC to start.
+
+2. WHERE TO FIND FIRST 10 CUSTOMERS (free):
+   - Upwork freelancers (send: "I made a widget, free wall for you?")
+   - Reddit: r/freelance, r/SideProject, r/webdev (show demo gif)
+   - Product Hunt launch (Tuesday 00:01 PST)
+   - Indie Hackers, X/Twitter #buildinpublic
+   Script: "I built ProofWall — collect reviews with a link, embed in 30s. Free for first 20 users, can I make yours?"
+
+3. HOW TO SELL THE WHOLE STARTUP (flip):
+   - When you have $50-200/mo revenue: list on Flippa.com or Acquire.com
+   - Price formula: monthly profit x 24-36. Ex: $100/mo = $2400-3600
+   - Buyer gets: this folder (code) + domain + LemonSqueezy product + this guide
+   - Transfer: zip folder + give domain + invite to LemonSqueezy. 30 min.
+   - Why buyers pay: no server cost, vanilla JS, MRR, English market.
+
+4. DEPLOY GLOBAL (free):
+   - Push folder to GitHub -> import on Vercel.com -> you get https://proofwall.vercel.app
+   - Buy domain on Namecheap (~$10/yr): proofwall.io -> connect to Vercel
+   - Change widget.js link in dashboard from YOUR-DOMAIN to real domain.
+
+5. V2 TO CHARGE MORE (when you earn):
+   - Add Supabase (free tier): Auth + Postgres for worldwide auto-save
+     (now collect.html saves to same browser only — enough for demo + first sales)
+   - Add Stripe/Lemon webhooks to auto-unlock Pro.
+
+Current files:
+index.html = landing + pricing
+dashboard.html = owner panel, localStorage
+collect.html?id=YOURNAME = public review form to share
+widget.js = embeddable wall, the sellable asset
+vercel.json = deploy config

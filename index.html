@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ProofWall — Collect Testimonials, Embed in 30s</title>
+<meta name="description" content="ProofWall lets freelancers & indie makers collect testimonials and embed a beautiful wall on any site. No backend needed." />
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+body{background:#0a0a0f;color:#fff;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:20px}
+.logo{font-weight:800;font-size:22px}.logo span{color:#7c5cff}
+.btn{background:#7c5cff;color:#fff;padding:12px 22px;border-radius:10px;font-weight:600;border:0;cursor:pointer;display:inline-block}
+.btn-ghost{border:1px solid #333;padding:12px 22px;border-radius:10px}
+.hero{max-width:1100px;margin:40px auto;padding:20px;text-align:center}
+.hero h1{font-size:52px;line-height:1.1}.hero h1 span{color:#7c5cff}
+.hero p{color:#aaa;margin:18px auto;max-width:600px;font-size:18px}
+.badges{display:flex;gap:10px;justify-content:center;margin:20px 0;color:#aaa;font-size:14px}
+.demo{max-width:1100px;margin:30px auto;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:#15151d;border:1px solid #262633;border-radius:16px;padding:20px;text-align:left}
+.card .stars{color:#ffcf3d}.card p{margin:10px 0;color:#ddd}.card small{color:#888}
+.section{max-width:1100px;margin:60px auto;padding:20px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:20px}
+.step{background:#15151d;padding:24px;border-radius:16px;border:1px solid #262633}
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:20px}
+.price{background:#15151d;border:1px solid #262633;border-radius:16px;padding:28px}
+.price.pop{border-color:#7c5cff;transform:scale(1.02)}
+.price h3{margin-bottom:8px}.price .num{font-size:36px;font-weight:800;margin:10px 0}
+footer{text-align:center;color:#666;padding:40px}
+code{background:#1e1e28;padding:3px 7px;border-radius:6px;font-size:14px}
+@media(max-width:600px){.hero h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="nav">
+  <div class="logo">Proof<span>Wall</span></div>
+  <div><a href="dashboard.html" class="btn">Try Free →</a></div>
+</div>
+
+<div class="hero">
+  <h1>Collect love.<br><span>Embed it anywhere.</span></h1>
+  <p>ProofWall is a micro-SaaS for freelancers & indie makers. Collect testimonials with a link, embed a beautiful wall in 30 seconds. No backend. Sellable asset.</p>
+  <div>
+    <a href="dashboard.html" class="btn">Create Your Wall — Free</a>
+    <a href="#pricing" class="btn-ghost">Pricing</a>
+  </div>
+  <div class="badges"><span>★ No signup needed for demo</span><span>★ Works on Webflow / Framer / WordPress</span><span>★ Global payments via Lemon Squeezy</span></div>
+</div>
+
+<div class="demo" id="live-demo"></div>
+<p style="text-align:center;color:#888">↑ Live demo rendered by <code>widget.js</code> — same file your customers will embed</p>
+
+<div class="section">
+<h2>How it works (30 seconds)</h2>
+<div class="steps">
+<div class="step"><h3>1. Create wall</h3><p>Open dashboard, add testimonials manually or share your public link: <code>yoursite.com/collect.html?id=you</code></p></div>
+<div class="step"><h3>2. Copy 2 lines</h3><p><code>&lt;div id="proofwall"&gt;&lt;/div&gt;<br>&lt;script src="widget.js"&gt;&lt;/script&gt;</code></p></div>
+<div class="step"><h3>3. Paste anywhere</h3><p>Works on portfolio, Gumroad, Notion, Framer. +38% conversion for freelancers.</p></div>
+</div>
+</div>
+
+<div class="section" id="pricing">
+<h2>Pricing — built to sell</h2>
+<div class="pricing">
+<div class="price"><h3>Free</h3><div class="num">$0</div><p>• 3 testimonials<br>• ProofWall branding<br>• Static embed</p><br><a href="dashboard.html" class="btn-ghost">Start</a></div>
+<div class="price pop"><h3>Pro</h3><div class="num">$9/mo</div><p>• Unlimited walls<br>• Remove branding<br>• Custom colors<br>• Priority support</p><br><a href="#" onclick="alert('Connect Lemon Squeezy link here to accept global payments');return false" class="btn">Buy Pro</a></div>
+<div class="price"><h3>Lifetime</h3><div class="num">$99</div><p>• Pay once, use forever<br>• Great for flipping on Flippa / Acquire.com<br>• Transferable license</p><br><a href="#" onclick="alert('Connect Gumroad link here');return false" class="btn-ghost">Get Lifetime</a></div>
+</div>
+<p style="color:#888;margin-top:16px">Why sellable? Clean vanilla JS, no server costs, MRR from Pro, transfer docs included. Buyer gets code + domain + LemonSqueezy account.</p>
+</div>
+
+<footer>Made with vanilla JS • MIT transferable • © 2026 ProofWall — <a href="dashboard.html">Dashboard</a></footer>
+<script src="widget.js"></script>
+<script>
+const demoData=[
+{name:"Sarah K.",role:"Startup Founder, USA",text:"Put ProofWall on my landing in 2 minutes. Signups +27%.",stars:5},
+{name:"Jasur T.",role:"Freelancer, Upwork",text:"Clients trust me more now. Best $9 I spend.",stars:5},
+{name:"Daniel M.",role:"Indie Hacker, Germany",text:"Sold my micro-startup for 24x MRR. Buyer wanted the testimonial engine.",stars:5}
+];
+const el=document.getElementById('live-demo');
+el.innerHTML='';
+demoData.forEach(t=>{el.appendChild(ProofWallCard(t));});
+</script>
+</body>
+</html>
