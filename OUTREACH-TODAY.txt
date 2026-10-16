@@ -1,0 +1,29 @@
+BUGUNGI REJA — 10 KISHI (2 soat, 0 so'm)
+
+QAYERDAN TOPISH (har biridan 2-3 tadan):
+1. Upwork: search "landing page" / "portfolio website" -> oxirgi job post qilgan 3 freelancer profilini och
+2. X/Twitter: search "need testimonials" OR "portfolio feedback" -> 3 kishi
+3. Reddit: r/freelance + r/SideProject -> "portfolio" post yozgan 2 kishi
+4. Indie Hackers: Latest projects -> 2 maker
+
+TAYYOR XAT (copy-paste, [Name] ni almashtir):
+
+EN (global):
+Hey [Name], loved your [portfolio/project]!
+Quick q: how do you collect client reviews?
+I built ProofWall — share a link, get a pretty wall, embed in 30s.
+Free setup for first 20 users, can I make yours in 2 min?
+Demo: https://proofwall-zhca.vercel.app
+— Gulirano
+
+Follow-up (24 soat javobsizga):
+Hey [Name], just bumping this — still happy to build your wall free, need only 1 testimonial text from you. Want it?
+
+TRACKER (har kuni to'ldir):
+1. Ism ___ | Qayer ___ | Yuborildi ✅/❌ | Javob ___ | Wall yasaldi? ___
+2. ...
+3. ...
+(10 tagacha)
+
+MAQSAD: 10 yuborish -> 3 javob -> 1 wall -> 1 pullik ($9).
+Javob kelsa darhol: dashboard.html da wall yasa -> collect link ber -> embed kod yubor.
