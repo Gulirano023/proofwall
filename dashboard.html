@@ -68,7 +68,7 @@ document.getElementById('count').innerText=data.length+'/∞';
 document.getElementById('list').innerHTML=data.map((x,i)=>'<div class=item><b>'+i+'. '+x.name+'</b> — '+x.text.slice(0,40)+'... <a href=# onclick="del('+i+')">delete</a></div>').join('')||'<small>No data yet</small>';
 ProofWallRender(document.getElementById('preview'),data,{theme});
 const json=JSON.stringify(data).replace(/'/g,"&#39;");
-const code='<div id="proofwall" data-theme="'+theme+'" data-testimonials=\''+JSON.stringify(data)+'\'></div>\n<script src="https://YOUR-DOMAIN.com/widget.js"><\/script>';
+const code='<div id="proofwall" data-theme="'+theme+'" data-testimonials=\''+JSON.stringify(data)+'\'></div>\n<script src="https://proofwall-zhca.vercel.app/widget.js"><\/script>';
 document.getElementById('embed').value=code;
 }
 function copyEmbed(){document.getElementById('embed').select();document.execCommand('copy');alert('Copied! Paste on any site.');}
