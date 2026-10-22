@@ -8,7 +8,6 @@ QAYERDAN TOPISH (har biridan 2-3 tadan):
 
 TAYYOR XAT (copy-paste, [Name] ni almashtir): 
 
-
 EN (global):
 Hey [Name], loved your [portfolio/project]!
 Quick q: how do you collect client reviews?
