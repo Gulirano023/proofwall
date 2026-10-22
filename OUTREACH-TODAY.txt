@@ -13,7 +13,7 @@ Hey [Name], loved your [portfolio/project]!
 Quick q: how do you collect client reviews?
 I built ProofWall — share a link, get a pretty wall, embed in 30s.
 Free setup for first 20 users, can I make yours in 2 min?
-Demo: https://proofwall-zhca.vercel.app
+Demo: https://proofwall-zhca.vercel.app 
 — Gulirano
 
 Follow-up (24 soat javobsizga):
