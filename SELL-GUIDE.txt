@@ -9,7 +9,6 @@ ProofWall — HOW TO SELL (global, 0 sum start)
    Lemon Squeezy accepts world cards and handles taxes.
    You don't need LLC to start.
 
-
 2. WHERE TO FIND FIRST 10 CUSTOMERS (free):
    - Upwork freelancers (send: "I made a widget, free wall for you?")
    - Reddit: r/freelance, r/SideProject, r/webdev (show demo gif)
